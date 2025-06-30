@@ -1,0 +1,358 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", serif;
+  background: #fff;
+  color: #222;
+}
+
+/* Top Navigation Bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafd;
+  padding: 0.5rem 2rem;
+  height: 70px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 95px;
+  margin-top: -10px;
+  display: block;
+}
+
+.logo-text {
+  font-size: 0;
+  /* Hide extra logo text if not needed */
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.4rem;
+}
+
+.navbar-menu a {
+  color: #222;
+  text-decoration: none;
+  padding: 0 10px;
+  font-family: "Georgia", serif;
+}
+
+.navbar-menu a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 30px;
+  width: 1px;
+  background: #a0c8f0;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+/* Main Section with Background Image */
+.main-content {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  inset: 0;
+  background: url('../images/hospital.jpg') center center/cover no-repeat;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* Overlay content */
+.center-info {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: 0rem;
+  text-align: center;
+}
+
+.center-title {
+  color: #3b6ea7;
+  background: #c5eafa;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  border: 2px solid #6AB0EE;
+}
+
+.center-description {
+  color: #222;
+  font-size: 1.15rem;
+  background: none;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-family: "Georgia", serif;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+/* Action Buttons */
+.actions {
+  position: absolute;
+  top: 40%;
+  right: 0%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  width: 600px;
+}
+
+.action-btn {
+  display: block;
+  background: rgba(131, 162, 230, 0.7);
+  color: #fff;
+  font-size: 3rem;
+  font-family: "Georgia", serif;
+  font-weight: 400;
+  padding: 2rem 3rem;
+  border-radius: 18px;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 24px 0 rgba(70,130,255,0.13);
+}
+
+.action-btn:hover {
+  background: rgba(70, 130, 255, 0.9);
+  box-shadow: 0 8px 32px 0 rgba(70,130,255,0.17);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 1.2rem 2rem;
+  font-family: "Georgia", serif;
+  font-size: 1.1rem;
+  height: 80px;
+}
+
+.footer-logo img {
+  height: 90px;
+  display: block;
+}
+
+.footer-center {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: larger;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.6rem;
+  font-size: smaller;
+  margin-top: 40px;
+}
+
+.footer-links a {
+  color: #222;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 1200px) {
+  .center-description {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .actions {
+    width: 90vw;
+    left: 5vw;
+    right: unset;
+    top: 52%;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar-logo img {
+    height: 65px;
+    margin-top: 0;
+  }
+  .navbar-menu {
+    font-size: 1rem;
+    gap: 1rem;
+  }
+  .divider {
+    height: 18px;
+    margin: 0 5px;
+  }
+  .main-content {
+    min-height: 90vh;
+  }
+  .center-title {
+    font-size: 1.3rem;
+    padding: 0.3rem 0;
+  }
+  .center-description {
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 1rem;
+  }
+  .actions {
+    width: 98vw;
+    left: 1vw;
+    top: 58%;
+    margin-top: 25%;
+  }
+  .action-btn {
+    font-size: 1.4rem;
+    padding: 1.2rem 0.5rem;
+  }
+  .footer {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    height: 60px;
+  }
+  .footer-logo img {
+    height: 80px;
+  }
+  .footer-links {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    height: auto;
+    justify-content: space-between;
+  }
+  .navbar-logo img {
+    height: 80px;
+  }
+  .navbar-menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+    margin-top: 0rem;
+  }
+  .divider {
+    display: none;
+  }
+  .main-content {
+    min-height: 86vh;
+  }
+  .center-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+    padding: 0.2rem 0;
+  }
+  .center-description {
+    font-size: 0.97rem;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-bottom: 0.8rem;
+    margin-top: 2rem;
+  }
+  .actions {
+    position: static;
+    width: 100%;
+    margin: 1.2rem 0 0.2rem 0;
+    align-items: center;
+    left: unset;
+    top: unset;
+    padding: 4rem 1rem;
+  }
+  .action-btn {
+    font-size: 1.9rem;
+    padding: 1rem 0.4rem;
+  }
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 0rem 0.3rem;
+    height: auto;
+  }
+  .footer-logo img {
+    height: 66px;
+  }
+  .footer-links {
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 12px;
+  }
+}
+@media (max-width: 650px) {
+  .background-image {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: #cfeaf6 !important; /* Or any blue of your choice */
+    opacity: 1 !important;
+    z-index: 0;
+    /* Remove the background image for mobile */
+    background-image: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .actions {
+    align-items: center;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  .action-btn {
+    width: 90vw;
+    max-width: 400px;
+    margin: 0.6rem auto;
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 1.5rem 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .action-btn {
+    width: 95vw;
+    max-width: 100%;
+    padding: 1.2rem 0.5rem;
+    font-size: 1.9rem;
+    margin: 0.7rem auto;
+  }
+}
